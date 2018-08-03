@@ -59,7 +59,7 @@ int main(){
 		if (Cross(x-t[cnt],y-t[cnt])>=0) t[++cnt]=x,j++;
 		else t[++cnt]=y,i++;
 	}
-	for (i=2;i<cnt;i++) res+=Cross(t[i]-t[1],t[i+1]-t[1]);
+	for (cnt-=1,i=2;i<cnt;i++) res+=Cross(t[i]-t[1],t[i+1]-t[1]);
 	printf("%lld\n",res);
 	return 0;
 }
