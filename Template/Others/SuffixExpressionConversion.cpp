@@ -1,4 +1,4 @@
-//后缀表达式转中缀表达式,同时求值,O(n)
+//中缀表达式转后缀表达式,同时求值,O(n)
 #include <bits/stdc++.h>
 using namespace std;
 vector<int>nums;
