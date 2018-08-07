@@ -10,7 +10,7 @@ inline T read(T&x){
 }
 const int N=200+10;
 const int INF=2000000000;
-int T,i,j,x,n,cas=1,cost[N][N],lx[N],ly[N],match[N],slack[N],pre[N];
+int T,i,j,x,y,n,cas=1,cost[N][N],lx[N],ly[N],match[N],slack[N],pre[N];
 bool vy[N];
 void augment(int root){
     fill(vy+1,vy+n+1,false);
