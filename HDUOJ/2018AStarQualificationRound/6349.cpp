@@ -2,6 +2,7 @@
 #define PB push_back
 #define MP make_pair
 using namespace std;
+typedef long long ll;
 template<typename T>
 inline T read(T&x){
 	x=0;int f=0;char ch=getchar();
