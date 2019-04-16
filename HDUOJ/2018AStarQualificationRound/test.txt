@@ -1,0 +1,48 @@
+ll Pow(ll a,ll b,ll P){
+    ll ans=1;
+    for(;b;b>>=1,a=a*a%P)
+        if(b&1) ans=ans*a%P;
+    return ans;
+}
+void exgcd(ll a,ll b,ll &d,ll &x,ll &y){
+    if(b==0) d=a,x=1,y=0;
+    else exgcd(b,a%b,d,y,x),y-=(a/b)*x;
+}
+ll Inv(ll a,ll n){
+    ll d,x,y;
+    exgcd(a,n,d,x,y);
+    return d==1?(x+n)%n:-1;
+}
+ll Fac(ll n,ll p,ll pr){
+    if(n==0) return 1;
+    ll re=1;
+    for(ll i=2;i<=pr;i++) if(i%p) re=re*i%pr;
+    re=Pow(re,n/pr,pr);
+    ll r=n%pr;
+    for(int i=2;i<=r;i++) if(i%p) re=re*i%pr;
+    return re*Fac(n/p,p,pr)%pr;
+}
+ll C(ll n,ll m,ll p,ll pr){
+    if(n<m) return 0;
+    ll x=Fac(n,p,pr),y=Fac(m,p,pr),z=Fac(n-m,p,pr);
+    ll c=0;
+    for(ll i=n;i;i/=p) c+=i/p;
+    for(ll i=m;i;i/=p) c-=i/p;
+    for(ll i=n-m;i;i/=p) c-=i/p;
+    ll a=x*Inv(y,pr)%pr*Inv(z,pr)%pr*Pow(p,c,pr)%pr;
+    return a*(MOD/pr)%MOD*Inv(MOD/pr,pr)%MOD;
+}
+ll Lucas(ll n,ll m){
+    ll x=MOD,re=0;
+    for(ll i=2;i<=MOD;i++) if(x%i==0){
+        ll pr=1;
+        while(x%i==0) x/=i,pr*=i;
+        re=(re+C(n,m,i,pr))%MOD;
+    }
+    return re;
+}
+
+江干区疾控中心机场路一巷82号0571-86451193
+病情分析：仅仅是口交，对方没射精，你也没有口腔溃疡，这种情况不会感染艾滋病的。艾滋病的传染，必须是艾滋病人的血液或体液进入你的体内才有可能被感染，你的情况不会感染的。
+指导意见：你不用担心，也不用做有关艾滋病的检测，你的情况没有感染艾滋病的危险，也就是说，你感染的几率是零。放心吧。
+您需要放松心态，不要草木皆兵，这次的伤口，不可能造成您感染，您也不需要因此做有关艾滋病的检测。
