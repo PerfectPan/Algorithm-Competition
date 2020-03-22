@@ -9,7 +9,7 @@ inline T read(T&x){
     while (ch<'0'||ch>'9') f|=(ch=='-'),ch=getchar();
     while (ch>='0'&&ch<='9') x=x*10+ch-'0',ch=getchar();
     return x=f?-x:x;
-}
+} 
 const int N=2e6+10;
 struct Node{
     int cnt,nxt[26];
