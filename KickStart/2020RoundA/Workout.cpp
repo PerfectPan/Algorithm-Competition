@@ -12,7 +12,7 @@ inline T read(T&x){
 }
 const int N=1e5+10;
 int T,n,i,k,cas=1,a[N];
-bool check(int x){
+bool check(int x){ 
     int cnt=0;
     for (int i=2;i<=n;++i){
         int d=a[i]-a[i-1];
