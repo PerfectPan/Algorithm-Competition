@@ -28,7 +28,7 @@ struct MCMF{
     }
 
     bool SPFA(int &flow,int &cost){
-        for(int i=0;i<n;++i) d[i]=INF;
+        for(int i=0;i<=n;++i) d[i]=INF;
         queue<int> Q;
         memset(inq,0,sizeof(inq));
         d[s]=0, Q.push(s), a[s]=INF, p[s]=0, inq[s]=true;
